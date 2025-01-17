@@ -1,0 +1,50 @@
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pregnancy Tracker</title>
+
+  <link rel="icon" href="{% static 'images/baby-boy.png' %}" type="image/x-icon">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{% static 'style/bootstrap/css/bootstrap.min.css' %}">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="{% static 'style/style.css' %}">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'index' %}">
+      <img src="{% static 'images/icons8-pregnant-48.png' %}" alt="Logo" width="50" height="50">
+      Pregnancy Tracker
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">  <!-- Use ms-auto to push navbar items to the right -->
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'index' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    {% block content %}
+    {% endblock %}
+  </div>
+
+  <footer class="bg-light text-center py-4">
+    <p>Pregnancy Tracker</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="{% static 'style/bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and typography styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f8f9fa; /* Soft light background */
+  color: #333; /* Darker text color for better contrast */
+}
+
+h1, h2, h3 {
+  color: #d68b95; /* Soft pinkish color for headers */
+  font-family: 'Playfair Display', serif; /* Elegant serif font for headings */
+  font-weight: bold; /* Bolder text for headers */
+}
+
+/* Container for layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Navbar styling */
+.navbar {
+  margin-bottom: 20px;
+  background-color: #f48c8b; /* Stronger coral pink background */
+  border-radius: 5px;
+}
+
+.navbar-brand img {
+  margin-right: 10px;
+}
+
+.navbar a {
+  font-weight: bold; /* Bold text for navigation links */
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  border-radius: 8px;
+  border: 2px solid #e0736f; /* Darker pink border */
+  padding: 14px;
+  font-size: 16px; /* Increased font size for form inputs */
+}
+
+.form-control:focus {
+  border-color: #d68b95; /* Soft pink border on focus */
+  box-shadow: 0 0 5px rgba(227, 144, 162, 0.6); /* Soft shadow on focus */
+}
+
+.btn {
+  border-radius: 8px;
+  padding: 14px 24px;
+  background-color: #d68b95; /* Stronger coral color */
+  color: white;
+  border: none;
+  font-weight: bold; /* Bold text on buttons */
+}
+
+.btn:hover {
+  background-color: #e0736f; /* Darker coral when hovered */
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  margin-top: 20px;
+  border: 1px solid #e0736f; /* Stronger border color for table */
+}
+
+table th,
+table td {
+  padding: 16px;
+  text-align: left;
+  font-weight: bold; /* Bold table headers and text */
+}
+
+table th {
+  background-color: #f48c8b; /* Stronger blush pink background */
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f1f3; /* Soft alternating row color */
+}
+
+table tr:hover {
+  background-color: #e0736f; /* Darker row hover color */
+  color: white; /* White text when hovering over rows */
+}
+
+/* Footer styling */
+footer {
+  background-color: #f48c8b;
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+  border-radius: 5px;
+}
+
+footer p {
+  margin: 0;
+  color: palevioletred;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Carousel styling */
+.carousel {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px; /* Adds more rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow around images */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #d68b95; /* Stronger coral color for navigation arrows */
+  border-radius: 50%; /* Make the buttons round */
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: #e0736f; /* Darker coral when hovered */
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  padding: 14px;
+  background-color: rgba(0, 0, 0, 0.6); /* Stronger semi-transparent background for captions */
+  color: white;
+  border-radius: 5px;
+  font-family: 'Playfair Display', serif; /* Elegant font for captions */
+  font-weight: bold; /* Bold caption text */
+}
+
+.carousel-item {
+  transition: transform 0.5s ease-in-out; /* Smooth transition between slides */
+}
+
+.carousel-inner {
+  overflow: hidden; /* Ensures the carousel items do not overflow */
+}
+
+.carousel-inner img {
+  width: 100%;
+  height: 700px; /* Adjusted height for a better view */
+  object-fit: fill;
+}
+
+/* Image styles for index page */
+.index-img {
+  max-width: 60%; /* Reduced the width by 40% */
+  height: 50px; /* Maintains aspect ratio */
+  margin: 20px auto; /* Centers the images and adds margin for spacing */
+  display: block; /* Ensures the image is block-level for better alignment */
+  border-radius: 10px; /* Adds rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow around images */
+}
+
+.index-img-small {
+  max-width: 30%; /* Further reduces the size for smaller images by 40% */
+  height: auto; /* Maintains aspect ratio */
+  margin: 15px auto; /* Adds margin for better spacing */
+  display: block;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow around images */
+}
+
+/* Adjust margin between text, buttons, and images */
+.index-img, .index-img-small {
+  margin-bottom: 30px; /* Adds space below images */
+}
+
+p, .btn {
+  margin-bottom: 20px; /* Adds spacing below paragraphs and buttons */
+}
+
+
+/* Edit Button */
+.edit-btn {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.edit-btn:hover {
+  background-color: cadetblue; /* Darker green when hovered */
+  color: white;
+}
+
+/* Delete Button */
+.delete-btn {
+  background-color: #f44336; /* Red background */
+  color: white; /* White text */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.delete-btn:hover {
+  background-color: #e53935; /* Darker red when hovered */
+  color: white;
+}

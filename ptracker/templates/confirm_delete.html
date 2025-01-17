@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h2>Confirm Deletion</h2>
+    <p>Are you sure you want to delete the pregnancy record for {{ pregnancy.user_name }}?</p>
+
+    <form method="POST">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger">Delete</button>
+      <a href="{% url 'pregnancy_list' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+  </div>
+{% endblock %}

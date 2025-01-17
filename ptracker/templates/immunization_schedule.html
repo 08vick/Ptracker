@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container my-5">
+    <h1>Immunization Schedule for {{ pregnancy.user_name }}</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Vaccine Name</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for vaccine, date in immunization_schedule.items %}
+          <tr>
+            <td>{{ vaccine }}</td>
+            <td>{{ date|date:"F j, Y" }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

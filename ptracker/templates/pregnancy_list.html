@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+  <div class="container my-5">
+    <h1>Pregnancy Records</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>LMP Date</th>
+          <th>Baby's Birth Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for pregnancy in pregnancies %}
+          <tr>
+            <td>{{ pregnancy.user_name }}</td>
+            <td>{{ pregnancy.lmp_date }}</td>
+            <td>{{ pregnancy.baby_birth_date }}</td>
+            <td>
+
+              <link rel="stylesheet" href="{% static 'path/to/your/stylesheet.css' %}">
+              <!-- Link to view the immunization schedule -->
+              <a href="{% url 'immunization_schedule' pregnancy.id %}" class="btn btn-info">View Immunization Schedule</a>
+              <!-- Link to update the pregnancy record -->
+              <a href="{% url 'update_pregnancy' pregnancy.id %}" class="edit-btn">Edit</a>
+              <!-- Link to delete the pregnancy record -->
+              <a href="{% url 'delete_pregnancy' pregnancy.id %}" class="delete-btn">Delete</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
