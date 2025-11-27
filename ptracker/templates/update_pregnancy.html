@@ -1,28 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <div class="container">
+  <div class="card-modern">
     <h2>Update Pregnancy Record</h2>
 
-    <!-- Display any errors -->
     {% if form.errors %}
-      <div class="alert alert-danger">
-        Please fix the errors below.
-      </div>
+      <div class="alert alert-danger">Please correct the errors below.</div>
     {% endif %}
 
-    <!-- Pregnancy update form -->
     <form method="POST">
       {% csrf_token %}
-      <div class="form-group">
-        <label for="user_name">Full Name</label>
-        <input type="text" class="form-control" id="user_name" name="user_name" value="{{ form.user_name.value }}" required>
+      <div class="mb-3">
+        {{ form.user_name.label_tag }}
+        {{ form.user_name }}
       </div>
-      <div class="form-group">
-        <label for="lmp_date">Last Menstrual Period (LMP)</label>
-        <input type="date" class="form-control" id="lmp_date" name="lmp_date" value="{{ form.lmp_date.value }}" required>
+      <div class="mb-3">
+        {{ form.lmp_date.label_tag }}
+        {{ form.lmp_date }}
       </div>
-      <button type="submit" class="btn btn-primary">Update</button>
+      <button type="submit" class="btn btn-primary">Update Record</button>
     </form>
 
     <a href="{% url 'pregnancy_list' %}" class="btn btn-secondary mt-3">Cancel</a>
