@@ -1,50 +1,44 @@
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pregnancy Tracker</title>
-
   <link rel="icon" href="{% static 'images/baby-boy.png' %}" type="image/x-icon">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="{% static 'style/bootstrap/css/bootstrap.min.css' %}">
-  <!-- Custom Stylesheet -->
+  <link href="{% static 'style/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'style/style.css' %}">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{% url 'index' %}">
-      <img src="{% static 'images/icons8-pregnant-48.png' %}" alt="Logo" width="50" height="50">
-      Pregnancy Tracker
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">  <!-- Use ms-auto to push navbar items to the right -->
-        <li class="nav-item active">
-          <a class="nav-link" href="{% url 'index' %}">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'about' %}">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-        </li>
-      </ul>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="{% url 'index' %}">
+        <img src="{% static 'images/icons8-pregnant-48.png' %}" alt="Logo" width="30" height="30" class="me-2">
+        <span class="fw-bold" style="color: #e74c3c; font-family: 'Poppins', sans-serif;">Pregnancy Tracker</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link fw-medium" href="{% url 'index' %}">Home</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium" href="{% url 'about' %}">About</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium" href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-  <div class="container">
+  <main class="container my-4 flex-grow-1">
     {% block content %}
     {% endblock %}
-  </div>
+  </main>
 
-  <footer class="bg-light text-center py-4">
-    <p>Pregnancy Tracker</p>
+  <footer class="bg-dark text-light text-center py-4 mt-auto">
+    <p class="mb-0">&copy; {% now "Y" %} Pregnancy Tracker. Your journey, beautifully tracked.</p>
   </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="{% static 'style/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'style/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 </body>
 </html>
