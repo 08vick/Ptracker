@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <div class="container">
+  <div class="card-modern text-center">
     <h2>Confirm Deletion</h2>
-    <p>Are you sure you want to delete the pregnancy record for {{ pregnancy.user_name }}?</p>
+    <p>Are you sure you want to delete the pregnancy record for <strong>{{ pregnancy.user_name }}</strong>?</p>
 
-    <form method="POST">
+    <form method="POST" class="d-inline">
       {% csrf_token %}
-      <button type="submit" class="btn btn-danger">Delete</button>
-      <a href="{% url 'pregnancy_list' %}" class="btn btn-secondary">Cancel</a>
+      <button type="submit" class="btn btn-danger">Delete Permanently</button>
     </form>
+    <a href="{% url 'pregnancy_list' %}" class="btn btn-secondary ms-2">Cancel</a>
   </div>
 {% endblock %}
+
