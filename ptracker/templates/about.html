@@ -2,37 +2,31 @@
 {% load static %}
 
 {% block content %}
- <div class="carousel">
-  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="{% static 'images/booties-2047596_1280.jpg' %}" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="{% static 'images/violence-woman-3651844_1280.jpg' %}" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="{% static 'images/baby-821625_1280.jpg' %}" class="d-block w-100" alt="...">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</div>
-
-
-  <!-- About Content -->
-  <div class="container my-5">
+  <div class="card-modern">
     <h2>About Pregnancy Tracker</h2>
     <p>Our pregnancy tracker helps you monitor your progress throughout your pregnancy journey.</p>
+    
+    <div id="carouselExample" class="carousel slide my-4" data-bs-ride="carousel">
+      <div class="carousel-inner rounded">
+        <div class="carousel-item active">
+          <img src="{% static 'images/booties-2047596_1280.jpg' %}" class="d-block w-100" alt="Baby booties">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/baby-821625_1280.jpg' %}" class="d-block w-100" alt="Newborn baby">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/baby-1867222_1280.jpg' %}" class="d-block w-100" alt="Happy baby">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+
     <h3>Vision</h3>
     <p>We envision providing an easy-to-use platform to track pregnancy milestones and keep important information at your fingertips.</p>
   </div>
-
 {% endblock %}
