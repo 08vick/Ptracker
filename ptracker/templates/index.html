@@ -1,70 +1,53 @@
 {% extends 'base.html' %}
-
 {% load static %}
 
 {% block content %}
-  <div class="container">
-    <!-- Add written information -->
+  <div class="card-modern text-center">
     <h2>Welcome to the Pregnancy Tracker</h2>
-    <p>
-      The Pregnancy Tracker helps women track their beautiful journey to motherhood, Get the chance to check and keep
-      record of stages in your pregnancy. The application will calculate key milestones, including weeks pregnant,
-      trimester stages, and your baby’s expected birthdate.
-    </p>
+    <p>The Pregnancy Tracker helps women track their beautiful journey to motherhood.</p>
 
-      <!-- Add your image here -->
-    <img src="{% static 'images/baby-1867222_1280.jpg' %}" alt="Pregnancy Tracker" class="img-fluid" />
+    <img src="{% static 'images/baby-1867222_1280.jpg' %}" alt="Pregnancy Journey" class="img-fluid rounded mb-4" style="max-width: 600px;">
 
-    <p>
-      Pregnancy is a beautiful journey, and having a tracker can be a great way to stay on top of appointments, milestones,
-      and upcoming events. Whether you are tracking your pregnancy or supporting a loved one, this tracker is designed
-      to keep you informed every step of the way.
-    </p>
+    <p>Pregnancy is a beautiful journey. Stay informed with milestones, due dates, and immunization schedules.</p>
 
-    <h3>How to use</h3>
-    <ul>
-      <li>Enter your Last Menstrual Period (LMP) to calculate pregnancy details.</li>
-      <li>Receive updates on how many weeks pregnant you are and your current trimester.</li>
-      <li>Get an estimated due date and follow along through each stage of your pregnancy.</li>
-      <li>Track your baby’s immunization schedule once your pregnancy is registered.</li>
+    <h3>How to Use</h3>
+    <ul class="text-start mb-4" style="max-width: 600px; margin: 0 auto;">
+      <li>Enter your Last Menstrual Period (LMP)</li>
+      <li>Get your due date and trimester</li>
+      <li>View your baby's immunization schedule after registration</li>
     </ul>
 
-    <h3>Key in details</h3>
-    <p>Enter your details below to start tracking your pregnancy:</p>
-
-    <!-- Display any error messages -->
     {% if error %}
-      <div class="alert alert-danger">
-        {{ error }}
-      </div>
+      <div class="alert alert-danger">{{ error }}</div>
     {% endif %}
 
-    <!-- Form for LMP input -->
-    <form method="POST">
+    <form method="POST" class="row g-3 justify-content-center">
       {% csrf_token %}
-      <div class="form-group">
-        <label for="user_name">Full Name</label>
-        <input type="text" class="form-control" id="user_name" name="user_name" value="{{ form.user_name.value }}" required>
+      <div class="col-md-6">
+        {{ form.user_name.label_tag }}
+        {{ form.user_name }}
       </div>
-      <div class="form-group">
-        <label for="lmp_date">Last Menstrual Period (LMP)</label>
-        <input type="date" class="form-control" id="lmp_date" name="lmp_date" value="{{ form.lmp_date.value }}" required>
+      <div class="col-md-6">
+        {{ form.lmp_date.label_tag }}
+        {{ form.lmp_date }}
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Start Tracking</button>
+      </div>
     </form>
 
-    <!-- Display pregnancy info after form submission -->
     {% if pregnancy_info %}
-      <h3>Pregnancy Information:</h3>
-      <p><strong>Weeks Pregnant:</strong> {{ pregnancy_info.weeks_pregnant }}</p>
-      <p><strong>Due Date:</strong> {{ pregnancy_info.due_date }}</p>
-      <p><strong>Trimester:</strong> {{ pregnancy_info.trimester }}</p>
+      <div class="card bg-light mt-4 p-3">
+        <h4>Pregnancy Information</h4>
+        <p><strong>Weeks Pregnant:</strong> {{ pregnancy_info.weeks_pregnant }}</p>
+        <p><strong>Due Date:</strong> {{ pregnancy_info.due_date }}</p>
+        <p><strong>Trimester:</strong> {{ pregnancy_info.trimester }}</p>
+      </div>
     {% endif %}
 
-      <img src="{% static 'images/child-89810_1280.jpg' %}" alt="Pregnancy Tracker" class="img-fluid" />
+    <img src="{% static 'images/child-89810_1280.jpg' %}" alt="Baby Health" class="img-fluid rounded mt-4" style="max-width: 600px;">
 
-    <h3>Immunization Schedule</h3>
-    <p>Once you register your pregnancy, you will be able to view the recommended immunization schedule for your baby.
-    This includes important vaccinations to ensure your baby stays healthy and protected throughout their early life.</p>
+    <h3 class="mt-4">Immunization Schedule</h3>
+    <p>Once registered, view your baby’s recommended vaccination timeline.</p>
   </div>
 {% endblock %}
